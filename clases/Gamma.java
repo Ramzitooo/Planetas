@@ -1,36 +1,54 @@
 package Test.Planetas;
-
+/**
+ * 
+ * @author Osmar Ain Flores
+ *
+ */
 public class Gamma 
 {
 
-	public static int velocidad = 1000;
-	public static int dias;
+	private Integer velocidad;
+	private Integer dias;
+	private Integer angulo;
 	
-	public Gamma()
+	public Gamma(Integer dias)
 	{
-		
+		this.dias = dias;
+		this.velocidad = 1000;
+		this.angulo = 360;
 	}
 	
-	public static int anguloPorDias()
-	{	
-		Integer total = 5 * dias;
-		Integer anguloTotal= 360;
+	public void anguloPorDia()
+	{
+		this.angulo = this.angulo - 5;
+		if (this.angulo == 0) 
+		{
+			this.angulo = 360;
+		}
+	}
 
-		for (int i = 0; i < dias ; i++) 
-		{
-			anguloTotal = anguloTotal - 5;
-			if (anguloTotal == 0) 
-			{
-				anguloTotal = 360;
-			}
-		}
-		if (anguloTotal == 360) 
-		{
-			anguloTotal = 0;
-		}
-		System.out.println("Angulo del Planeta Gama: "+anguloTotal);
-		return anguloTotal;
-		
+	public Integer getVelocidad() {
+		return velocidad;
+	}
+
+	public void setVelocidad(Integer velocidad) {
+		this.velocidad = velocidad;
+	}
+
+	public Integer getDias() {
+		return dias;
+	}
+
+	public void setDias(Integer dias) {
+		this.dias = dias;
+	}
+
+	public Integer getAngulo() {
+		return angulo;
+	}
+
+	public void setAngulo(Integer angulo) {
+		this.angulo = angulo;
 	}
 	
 }
